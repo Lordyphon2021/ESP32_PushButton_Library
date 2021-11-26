@@ -1,18 +1,21 @@
 #pragma once
+#include "4067mux.h"
 
-class MUX;
+
 
 
 class Push_button{
 
   private:
     int pin_number;
+    MUX* pMUX;
     bool pin_state;
     bool pin_last_state;
     long longpress_ctr;
     long debounce_ctr;
+    int debounce_time;
     bool csto_sel_flag;
-    MUX* pMUX;
+   
     
   private:  
     
@@ -22,20 +25,17 @@ class Push_button{
   public:  
     
   
-    Push_button(int pin);
-    Push_button(int muxnum, MUX& hc4067_mux);
+    Push_button(int pin, int debounce_ms = 0); //constructor ESP-Pin
+    Push_button(int mux_input, MUX& hc4067_mux, int debounce_ms = 0); //constructor Multiplexer Input
     
+    //main function interface:
     void poll_input_pin(void);
-    bool pressed(void);
-    bool longpress(void);
+    bool longpress(int presstime);
     bool shortpress(void);
-    bool both_pressed(Push_button& other);
     bool operator+(Push_button& other);
+    
   
-    
-    
-    
- }; 
+}; 
 
 
      
