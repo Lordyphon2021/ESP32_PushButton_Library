@@ -14,11 +14,11 @@ Overloaded constructors convert pin state logic accordingly.
      returns true if pin state changed (uC Pin: negative logic, internal pullup on, true if state change from 1 to 0, 
      MUX logic : true if state change from 0 to 1, external pull-downs required (10k))
 
-     longpress(int presstime)  : 
+ longpress(int presstime)  : 
 
      increments counter, returns true when counter reaches threshold, resets counter. presstime roughly ms.
 
-     overloaded + operator: if(Button_1 + Button_2) returns true if both pressed. 
+ overloaded + operator: if(Button_1 + Button_2) returns true if both pressed. 
 
      debouncing via private button class method. debounce value can be omitted, default will deactivate method.
 
