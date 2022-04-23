@@ -1,11 +1,8 @@
-# ESP32_CPP_I-O
-
-Experimental ESP32 Library for 16x Pushbutton Input with 74HC6067 Multiplexer or direct GPIO Input
-and otional 74HC595 shift register serial output.
+Experimental work-in-progress ESP32 Library for 16x Pushbutton Input with 74HC6067 Multiplexer or direct GPIO Input
+and 74HC595 shift register serial output.
 
 Buttons can be assigned either directly to an ESP32 Pin or to 74HC4067 Multiplexer Inputs ( 0 - 15 )
 Overloaded constructors convert pin state logic accordingly.
-    
     
  public button methods  : 
  
